@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JayGraphics Studio</title>
+<style>
+  body { font-family: 'Arial', sans-serif; margin:0; padding:0; line-height:1.6; color:#333; background:#f4f4f4; }
+  header { background:#4CAF50; color:white; padding:30px 0; text-align:center; }
+  header h1 { margin:0; font-size:2.5em; }
+  nav { margin-top:10px; }
+  nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; font-size:1em; }
+  nav a:hover { text-decoration:underline; }
+  section { padding:60px 20px; max-width:1100px; margin:auto; }
+  h2 { color:#4CAF50; margin-bottom:40px; text-align:center; font-size:2em; }
+  .services, .portfolio { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:25px; }
+  .card { background:white; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:center; transition:transform 0.3s ease; }
+  .card:hover { transform: translateY(-5px); }
+  .card img { width:100%; border-radius:10px; margin-bottom:15px; }
+  .card h3 { margin:10px 0 10px; color:#333; }
+  .card p { font-size:0.95em; color:#555; }
+  footer { text-align:center; padding:25px; background:#333; color:white; font-size:0.9em; }
+  .social a { margin:0 10px; color:white; text-decoration:none; font-size:1.2em; }
+  .social a:hover { text-decoration:underline; }
+  @media(max-width:600px){ header h1 { font-size:2em; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>JayGraphics Studio</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>Welcome to JayGraphics Studio! We specialize in creating high-quality, creative designs that make your brand stand out. Fast delivery, affordable prices, and professional designs guaranteed.</p>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Logo Design</h3>
+      <p>Unique logos that perfectly reflect your brand identity.</p>
+    </div>
+    <div class="card">
+      <h3>Flyer Design</h3>
+      <p>Professional flyers for events, promotions, and business needs.</p>
+    </div>
+    <div class="card">
+      <h3>Business Cards</h3>
+      <p>High-quality business cards that leave a lasting impression.</p>
+    </div>
+    <div class="card">
+      <h3>Social Media Graphics</h3>
+      <p>Custom posts, banners, and visuals for all platforms.</p>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <h2>Portfolio</h2>
+  <div class="portfolio" id="portfolio-gallery">
+    <!-- Portfolio images loaded automatically -->
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: <a href="mailto:jaygraphics@example.com">jaygraphics@example.com</a></p>
+  <p>WhatsApp: <a href="https://wa.me/09028267463">+2349028267463</a></p>
+  <div class="social">
+    <a href="#" target="_blank">Facebook</a>
+    <a href="#" target="_blank">Instagram</a>
+    <a href="#" target="_blank">Twitter</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 JayGraphics Studio. All rights reserved.</p>
+</footer>
+
+<script>
+// Automatically load all images in the "images" folder
+const portfolio = document.getElementById('portfolio-gallery');
+
+// Add image filenames here or just upload all images with .jpg/.png/.webp extensions
+const imageFiles = [
+  'design1.jpg',
+  'design2.jpg',
+  'design3.jpg',
+  'design4.jpg'
+];
+
+imageFiles.forEach(file => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  const img = document.createElement('img');
+  img.src = `images/${file}`;
+  img.alt = file.split('.')[0];
+  card.appendChild(img);
+  portfolio.appendChild(card);
+});
+</script>
+
+</body>
+</html>
